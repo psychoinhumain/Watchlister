@@ -11,7 +11,6 @@ export default function handler(req, res) {
       body: JSON.stringify({
         grant_type: "authorization_code",
         code: req.body.code,
-        redirect_uri: `${process.env.APPLICATION_URL}/auth/notion/callback`,
       }),
     })
       .then((response) => response.json())
