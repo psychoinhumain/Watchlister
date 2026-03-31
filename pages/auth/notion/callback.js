@@ -5,7 +5,7 @@ import { Loader } from "@mantine/core";
 export let getStaticProps = () => {
   return {
     props: {
-      APPLICATION_URL: process.env.APPLICATION_URL,
+      APPLICATION_URL: process.env.NEXT_PUBLIC_APPLICATION_URL || "",
     },
   };
 };
@@ -34,7 +34,6 @@ function NotionCallback({ APPLICATION_URL }) {
     }
     fetchNotionAccessToken();
   }, [router, APPLICATION_URL]);
-
   return (
     <div style={{ paddingTop: "40vh", display: "grid", placeItems: "center" }}>
       <Loader size="xl" variant="bars" />
