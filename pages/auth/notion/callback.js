@@ -1,15 +1,13 @@
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { Loader } from "@mantine/core";
-
 export let getStaticProps = () => {
   return {
     props: {
-      APPLICATION_URL: process.env.NEXT_PUBLIC_APPLICATION_URL || "",
+      APPLICATION_URL: process.env.APPLICATION_URL,
     },
   };
 };
-
 function NotionCallback({ APPLICATION_URL }) {
   let router = useRouter();
   useEffect(() => {
@@ -40,5 +38,4 @@ function NotionCallback({ APPLICATION_URL }) {
     </div>
   );
 }
-
 export default NotionCallback;
